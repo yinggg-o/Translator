@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		2E7C8ED42C686F59009AFEA2 /* TranslatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7C8ED32C686F59009AFEA2 /* TranslatorUITests.swift */; };
 		2E7C8ED62C686F59009AFEA2 /* TranslatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7C8ED52C686F59009AFEA2 /* TranslatorUITestsLaunchTests.swift */; };
 		2ED666882C81742E000E505F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED666872C81742E000E505F /* AppDelegate.swift */; };
+		2ED6668B2C8191D3000E505F /* TranslucentWindowStyle in Frameworks */ = {isa = PBXBuildFile; productRef = 2ED6668A2C8191D3000E505F /* TranslucentWindowStyle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ED6668B2C8191D3000E505F /* TranslucentWindowStyle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +153,9 @@
 			dependencies = (
 			);
 			name = Translator;
+			packageProductDependencies = (
+				2ED6668A2C8191D3000E505F /* TranslucentWindowStyle */,
+			);
 			productName = Translator;
 			productReference = 2E7C8EB22C686F58009AFEA2 /* Translator.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +228,9 @@
 				Base,
 			);
 			mainGroup = 2E7C8EA92C686F58009AFEA2;
+			packageReferences = (
+				2ED666892C8191D3000E505F /* XCLocalSwiftPackageReference "../../../Downloads/TranslucentWindowStyle-main" */,
+			);
 			productRefGroup = 2E7C8EB32C686F58009AFEA2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -617,6 +625,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		2ED666892C8191D3000E505F /* XCLocalSwiftPackageReference "../../../Downloads/TranslucentWindowStyle-main" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../../Downloads/TranslucentWindowStyle-main";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2ED6668A2C8191D3000E505F /* TranslucentWindowStyle */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TranslucentWindowStyle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2E7C8EAA2C686F58009AFEA2 /* Project object */;
 }

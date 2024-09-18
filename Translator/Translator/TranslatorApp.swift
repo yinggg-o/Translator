@@ -1,10 +1,12 @@
 import SwiftUI
+import TranslucentWindowStyle
 
 @main
 struct TranslatorApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            
         }
         .windowStyle(HiddenTitleBarWindowStyle())
         .commands {
