@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad",
+          "version": "5.8.1"
+        }
+      },
+      {
+        "package": "NavigationStack",
+        "repositoryURL": "https://github.com/matteopuc/swiftui-navigation-stack.git",
+        "state": {
+          "branch": null,
+          "revision": "9e45f85008f5ad1fc0b3ee2d9e0ff1ca77f52efa",
+          "version": "1.0.6"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

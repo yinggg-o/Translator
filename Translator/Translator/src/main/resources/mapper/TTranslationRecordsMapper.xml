@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yinggg.translator.mapper.TTranslationRecordsMapper">
+
+
+    <!-- 定义resultMap，用于映射查询结果到TTranslationRecords实体类 -->
+    <resultMap id="TTranslationRecordsResultMap" type="com.yinggg.translator.entity.TTranslationRecords">
+        <!-- 假设属性名和字段名一一对应，这里直接映射即可 -->
+        <id property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="originalText" column="original_text"/>
+        <result property="translatedText" column="translated_text"/>
+        <result property="sourceLanguage" column="source_language"/>
+        <result property="targetLanguage" column="target_language"/>
+        <result property="translationDate" column="translation_date"/>
+        <result property="differences" column="differences"/>
+    </resultMap>
+    <!--  根据用户id 或 原文 或 译文 查询  -->
+    <select id="queryHistoryByUserIdOrOrigOrTran" parameterType="com.yinggg.translator.entity.SearchRequest"
+            resultMap="TTranslationRecordsResultMap">
+        select *
+        from t_translation_records
+        <where>
+            user_id = #{userId}
+            <if test="originalText != null and originalText != ''">
+                and original_text = #{originalText}
+            </if>
+            <if test="translatedText != null and translatedText != ''">
+                and translated_text = #{translatedText}
+            </if>
+        </where>
+        <if test="page != null and size != null">
+            LIMIT #{page}, #{size}
+        </if>
+    </select>
+
+    <!--  添加错题记录  -->
+    <insert id="addTranslate" parameterType="com.yinggg.translator.entity.TTranslationRecords" keyProperty="id"
+            useGeneratedKeys="true">
+        insert into t_translation_records
+        values (default, #{userId}, #{originalText}, #{translatedText}, #{sourceLanguage}, #{targetLanguage},
+                #{translationDate}, #{differences})
+    </insert>
+
+    <!--  更新错题记录  -->
+    <update id="updateTranslate" parameterType="com.yinggg.translator.entity.TTranslationRecords">
+        update t_translation_records
+        set original_text   = #{originalText},
+            translated_text = #{translatedText},
+            differences     = #{differences}
+        where id = #{id}
+    </update>
+
+    <!-- 删除错题   -->
+    <delete id="deleteTranslate" parameterType="integer">
+        delete
+        from t_translation_records
+        where id = #{id}
+    </delete>
+</mapper>
